@@ -231,6 +231,29 @@
             margin-top: 3rem;
             font-size: 0.9rem;
         }
+        /* --- RÉGLAGES POUR SMARTPHONES --- */
+        @media (max-width: 768px) {
+            /* 1. On réduit la hauteur du bandeau */
+            .wedding-header {
+                height: 250px; 
+            }
+
+            /* 2. On diminue la taille du titre (vos noms) */
+            .wedding-header h1 {
+                font-size: 2.5rem;
+            }
+
+            /* 3. On diminue la taille de la date */
+            .wedding-header p {
+                font-size: 1.1rem;
+            }
+
+            /* 4. On ajuste le menu pour qu'il prenne moins de place */
+            .wedding-nav li a {
+                padding: 0.8rem 0.6rem;
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>
