@@ -1,0 +1,161 @@
+/* Styles Généraux */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #F8F9FA;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* En-tête */
+.wedding-header {
+    height: 400px;
+    background-image: url('cap.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+}
+
+.banner-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wedding-header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 0;
+}
+
+.wedding-header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Navigation */
+.wedding-nav {
+    background-color: #002B5B;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.wedding-nav ul {
+    list-with: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.wedding-nav li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.wedding-nav li a.active, .wedding-nav li a:hover {
+    color: #FFD700;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Contenu */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active-content {
+    display: block;
+}
+
+.tab-content h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #002B5B;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.activity-list ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.activity-list li {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+}
+
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.hotel-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.hotel-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.hotel-item h4 {
+    color: #002B5B;
+    font-weight: 600;
+    padding: 0.5rem;
+    margin: 0;
+}
+
+.registry-block {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.registry-button {
+    background-color: #002B5B;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.registry-button:hover {
+    background-color: #001F3F;
+}
+
+/* Footer */
+.wedding-footer {
+    background-color: #F1F3F5;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}

@@ -3,53 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notre Mariage | Test Netlify</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fdf6f0;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        .container {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-        }
-        h1 {
-            color: #d4a373;
-            margin-bottom: 0.5rem;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #666;
-        }
-        .status {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 5px 15px;
-            background-color: #e9edc9;
-            color: #606c38;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-    </style>
+    <title>Mariage Lisa & Antoine - Cap Corse</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <h1>💍 Futur Site de Mariage</h1>
-        <p>Bravo Antoine ! Le déploiement Netlify fonctionne.</p>
-        <div class="status">Statut : En ligne (via GitHub)</div>
-    </div>
+    <header class="wedding-header">
+        <div class="banner-overlay">
+            <h1>Mariage Lisa & Antoine</h1>
+            <p>4 juillet 2027</p>
+        </div>
+    </header>
+
+    <nav class="wedding-nav">
+        <ul>
+            <li><a href="#accueil" class="active">ACCUEIL</a></li>
+            <li><a href="#hebergement">HEBERGEMENT</a></li>
+            <li><a href="#liste">LISTE DE MARIAGE</a></li>
+            <li><a href="#capcorse">CAP CORSE</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        
+        <section id="accueil" class="tab-content active-content">
+            <h2>Notre Célébration au Cap Corse</h2>
+            <div class="activity-list">
+                <ul>
+                    <li>Cérémonie Laïque</li>
+                    <li>Cocktail Vue Mer</li>
+                    <li>Dîner Étoilé</li>
+                    <li>Soirée Dansante</li>
+                </ul>
+            </div>
+            <p>Bienvenue sur notre site de mariage ! Nous sommes ravis de partager ce moment unique avec vous dans l'un des plus beaux endroits de Corse.</p>
+        </section>
+
+        <section id="hebergement" class="tab-content">
+            <h2>Hébergements Recommandés</h2>
+            <div class="hotel-grid">
+                <div class="hotel-item">
+                    <img src="https://images.unsplash.com/photo-1594212726488-0f727f711462?q=80&w=200&auto=format&fit=crop" alt="Hôtel">
+                    <h4>Hôtel l'Ile-Rousse</h4>
+                </div>
+                <div class="hotel-item">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=200&auto=format&fit=crop" alt="Hôtel">
+                    <h4>Le Tomino</h4>
+                </div>
+                <div class="hotel-item">
+                    <img src="https://images.unsplash.com/photo-1601662528567-526cf06f6582?q=80&w=200&auto=format&fit=crop" alt="Hôtel">
+                    <h4>Misincu</h4>
+                </div>
+                <div class="hotel-item">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=200&auto=format&fit=crop" alt="Hôtel">
+                    <h4>E Caselle</h4>
+                </div>
+                <div class="hotel-item">
+                    <img src="https://images.unsplash.com/photo-1563911302283-d2bc1d0bd317?q=80&w=200&auto=format&fit=crop" alt="Hôtel">
+                    <h4>Hôtel Cyrnea</h4>
+                </div>
+            </div>
+        </section>
+
+        <section id="liste" class="tab-content">
+            <h2>Notre Liste de Mariage</h2>
+            <div class="registry-block">
+                <a href="https://www.millemercimariage.com/" target="_blank" class="registry-button">Notre Cagnotte MILLEMERCIMARIAGE</a>
+            </div>
+        </section>
+
+        <section id="capcorse" class="tab-content">
+            <h2>Découvrir le Cap Corse</h2>
+            <div class="activity-list">
+                <ul>
+                    <li>Randonnée Sentier des Douaniers</li>
+                    <li>Plage de Nonza</li>
+                    <li>Phare de la Giraglia</li>
+                    <li>Dégustation Vin Patrimonio</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="wedding-footer">
+        <p>Created by Antoine</p>
+    </footer>
+
+    <script>
+        // Script simple pour changer d'onglet
+        const tabs = document.querySelectorAll('.wedding-nav a');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = tab.getAttribute('href');
+
+                // Enlever la classe active
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active-content'));
+
+                // Ajouter la classe active sur l'onglet cliqué
+                tab.classList.add('active');
+                document.querySelector(targetId).classList.add('active-content');
+            });
+        });
+    </script>
 
 </body>
 </html>
