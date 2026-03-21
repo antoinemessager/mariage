@@ -203,8 +203,10 @@ h2 {
 /* Images rdv */
 .rdv-img {
     max-width: 350px;
+    max-height: 200px;
+    object-fit: contain;
     display: block;
-    margin: 0.5rem auto 0;
+    margin: 1rem auto 0.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
