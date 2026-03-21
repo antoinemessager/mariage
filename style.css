@@ -17,7 +17,7 @@ body {
 /* En-tête */
 .wedding-header {
     height: 400px;
-    background-image: url('cap.jpg');
+    background-image: url('assets/cap.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
