@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariage Lisa & Antoine - Cap Corse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Styles Généraux */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #F8F9FA;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* En-tête */
+        .wedding-header {
+            height: 400px;
+            background-image: url('cap.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+
+        .banner-overlay {
+            background-color: rgba(0, 43, 91, 0.5); /* Filtre bleu marine */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .wedding-header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .wedding-header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Navigation */
+        .wedding-nav {
+            background-color: #002B5B; /* Bleu marine */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .wedding-nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .wedding-nav li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .wedding-nav li a.active, .wedding-nav li a:hover {
+            color: #FFD700; /* Touche dorée */
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Contenu */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tab-content.active-content {
+            display: block;
+        }
+
+        .tab-content h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #002B5B;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .content-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        /* Hébergement */
+        .hotel-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .hotel-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #002B5B;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .hotel-item a {
+            color: #002B5B;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #002B5B;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .hotel-item a:hover {
+            background: #002B5B;
+            color: white;
+        }
+
+        .airbnb-note {
+            background: #e9ecef;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        /* Liste de Mariage */
+        .registry-block {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .btn-primary {
+            background-color: #002B5B;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,43,91,0.3);
+            margin-top: 1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #001F3F;
+            transform: translateY(-2px);
+        }
+
+        /* À faire */
+        .todo-section h3 {
+            color: #002B5B;
+            margin-top: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .todo-section ul, .todo-section ol {
+            padding-left: 20px;
+        }
+
+        .todo-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .itinerary {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid #FFD700;
+        }
+
+        .itinerary h4 {
+            color: #002B5B;
+            margin-top: 0;
+        }
+
+        /* Footer */
+        .wedding-footer {
+            background-color: #001F3F;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+        /* --- RÉGLAGES POUR SMARTPHONES --- */
+        @media (max-width: 768px) {
+            /* 1. On réduit la hauteur du bandeau */
+            .wedding-header {
+                height: 250px; 
+            }
+
+            /* 2. On diminue la taille du titre (vos noms) */
+            .wedding-header h1 {
+                font-size: 2.5rem;
+            }
+
+            /* 3. On diminue la taille de la date */
+            .wedding-header p {
+                font-size: 1.1rem;
+            }
+
+            /* 4. On ajuste le menu pour qu'il prenne moins de place */
+            .wedding-nav li a {
+                padding: 0.8rem 0.6rem;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="wedding-header">
+        <div class="banner-overlay">
+            <h1>Mariage Lisa & Antoine</h1>
+            <p>4 juillet 2026</p>
+        </div>
+    </header>
+
+    <nav class="wedding-nav">
+        <ul>
+            <li><a href="#accueil" class="active">Le Programme</a></li>
+            <li><a href="#hebergement">Hébergement</a></li>
+            <li><a href="#liste">Liste de Mariage</a></li>
+            <li><a href="#capcorse">Découvrir le Cap Corse</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        
+        <section id="accueil" class="tab-content active-content">
+            <div class="text-center">
+                <h2>Le Programme du Jour J</h2>
+            </div>
+            <div class="content-box">
+                <p>Pour faciliter vos déplacements, un bus passera vous prendre : à <strong>16h00 au Domaine du Pozzu</strong>, à <strong>16h10 au Relais de Sisco</strong>, et à <strong>16h20 à Moline</strong>. Il vous déposera à la mairie (située au Hameau de Munacaghja, à environ 20 minutes en voiture de la marine).</p>
+                
+                <p>Après la mairie, ce même bus vous redescendra au hameau de Balba pour la <strong>cérémonie laïque qui commencera à 18h</strong>. Pour les plus sportifs, il est aussi possible de faire ce trajet à pied (comptez 20 à 30 minutes de descente sur un joli sentier caillouteux).</p>
+                
+                <p>Le soir, <strong>un système de navettes</strong> sera à votre disposition pour vous permettre de rentrer en toute sécurité jusqu'au bout de la nuit !</p>
+                
+                <p>Enfin, on se retrouve le lendemain dès <strong>11h30 à la paillotte du Pozzu</strong> pour un brunch les pieds dans l'eau. N'oubliez pas vos maillots de bain !</p>
+            </div>
+        </section>
+
+        <section id="hebergement" class="tab-content">
+            <div class="text-center">
+                <h2>Où dormir ?</h2>
+            </div>
+            <div class="content-box">
+                <p>Voici une liste non exhaustive des hébergements que nous vous recommandons dans le coin :</p>
+                
+                <div class="hotel-list">
+                    <div class="hotel-item">
+                        <span><strong>Le Domaine du Pozzu</strong></span>
+                        <a href="https://www.domaineupozzu.com/" target="_blank">Voir le site</a>
+                    </div>
+                    <div class="hotel-item">
+                        <span><strong>Les 5 Arches</strong></span>
+                        <a href="https://www.les5arches.com/" target="_blank">Voir le site</a>
+                    </div>
+                    <div class="hotel-item">
+                        <span><strong>La Ferme U San Martinu</strong></span>
+                        <a href="https://www.ferme-usanmartinu.com/" target="_blank">Voir le site</a>
+                    </div>
+                    <div class="hotel-item">
+                        <span><strong>Le Relais de Sisco</strong></span>
+                        <a href="https://www.lerelaisdesisco.fr/" target="_blank">Voir le site</a>
+                    </div>
+                </div>
+                
+                <div class="airbnb-note">
+                    💡 <em>Il y a également de nombreux logements disponibles sur <strong>Airbnb</strong>, mais attention, la plupart demandent une réservation de 3 nuits minimum.</em>
+                </div>
+            </div>
+        </section>
+
+        <section id="liste" class="tab-content">
+            <div class="text-center">
+                <h2>Notre Liste de Mariage</h2>
+            </div>
+            <div class="content-box registry-block">
+                <p>Votre présence à nos côtés est déjà le plus beau des cadeaux !</p>
+                <p>Si vous souhaitez néanmoins participer à nos futurs projets, nous avons ouvert une cagnotte en ligne :</p>
+                <a href="https://www.millemercismariage.com/lisaetantoine/liste.html" target="_blank" class="btn-primary">Accéder à la cagnotte</a>
+            </div>
+        </section>
+
+        <section id="capcorse" class="tab-content">
+            <div class="text-center">
+                <h2>Profiter du Cap Corse</h2>
+            </div>
+            <div class="content-box todo-section">
+                <p>Si vous avez la possibilité de prolonger un peu votre séjour (Lisa milite carrément pour que vous restiez plusieurs semaines !), on vous recommande à 100% de faire le tour du Cap Corse en voiture. C'est truffé de petits villages incroyables.</p>
+                
+                <p><strong>Le top 4 de Lisa :</strong></p>
+                <ol>
+                    <li><strong>Balba</strong> (en toute objectivité, bien sûr !)</li>
+                    <li><strong>Erbalunga</strong></li>
+                    <li><strong>Centuri</strong></li>
+                    <li><strong>Nonza</strong></li>
+                </ol>
+
+                <h3>🥾 Randonnées & Nature</h3>
+                <p>Il y a de superbes balades à faire. Notre gros coup de cœur, c'est le sentier littoral qui part de Macinaggio jusqu'à Sainte-Marie. Sinon, l'ascension vers le Monte Stello via le col Saint-Jean vaut vraiment le coup (ça passe par Balba et c'est super bien balisé). De manière générale, n'hésitez pas à vous perdre un peu dans les vallées, les sentiers entre rivières, forêts et montagnes sont dingues.</p>
+
+                <h3>🏖️ Les Plages</h3>
+                <p>Impossible de faire l'impasse sur la baignade ! La plage de Sisco est en galets. Mais si vous demandez à Lisa, les vraies pépites sont Sainte-Marie et toutes les petites criques au nord de Tamarone. Si vous êtes plutôt "team sable", filez à Pietracorbara, c'est juste à côté de Sisco.</p>
+
+                <h3>🍷 Bastia et ses alentours</h3>
+                <p>Prenez le temps de flâner dans la citadelle de Bastia. (Petite anecdote : Antoine a tellement aimé le musée d'histoire qu'il l'a déjà fait deux fois !). Et si vous êtes dans le coin un mercredi soir, foncez place du Marché pour les grands apéros.</p>
+
+                <h3>🚗 Nos idées d'itinéraires</h3>
+                
+                <div class="itinerary">
+                    <h4>Option 4 nuits (Focus Cap Corse)</h4>
+                    <ul>
+                        <li><strong>2 nuits à Sisco</strong></li>
+                        <li><strong>1 nuit à Macinaggio</strong> (parfait pour faire la rando jusqu'à Sainte-Marie)</li>
+                        <li><strong>1 nuit à Saint-Florent</strong> (pour boucler le tour du Cap)</li>
+                    </ul>
+                    <p><em>Gardez le dernier jour pour visiter Bastia et vous faire un bon dej sur la place du Marché.</em></p>
+                </div>
+
+                <div class="itinerary">
+                    <h4>Option 1 semaine (Cap Corse + Côte Ouest)</h4>
+                    <ul>
+                        <li><strong>2 nuits à Sisco</strong></li>
+                        <li><strong>1 nuit à Macinaggio</strong></li>
+                        <li><strong>1 nuit à Saint-Florent</strong></li>
+                        <li><strong>1 nuit du côté de Calvi ou L'Île-Rousse</strong> (les plages entre les deux sont folles, même si le coin est un peu plus cher). <em>Petit tips : la route pour descendre ensuite vers Porto est somptueuse, mais accrochez-vous, elle est longue et ça tourne beaucoup !</em></li>
+                        <li><strong>1 nuit à Porto</strong> (les Calanques de Piana sont incontournables).</li>
+                    </ul>
+                    <p><em>Pour le retour :</em> soit vous déposez votre voiture à Ajaccio, soit vous remontez sur Bastia par les terres (col de Vizzavona ou de Vergio) en passant une nuit à Corte. La vallée de la Restonica est magnifique, tout comme la rando vers les lacs de Melo et Capitello. (Et le musée de Corte est vraiment bien fichu !).</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="wedding-footer">
+        <p>Contact: Lisa 07 78 35 05 69 & Antoine 06 67 43 63 37 </p>
+    </footer>
+
+    <script>
+        // Script pour changer d'onglet
+        const tabs = document.querySelectorAll('.wedding-nav a');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = tab.getAttribute('href');
+
+                // Enlever la classe active
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active-content'));
+
+                // Ajouter la classe active sur l'onglet cliqué
+                tab.classList.add('active');
+                document.querySelector(targetId).classList.add('active-content');
+                
+                // Remonter en haut du contenu pour plus de fluidité
+                window.scrollTo({
+                    top: document.querySelector('.wedding-nav').offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
