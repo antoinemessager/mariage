@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Découvrir le Cap Corse - Mariage Lisa & Antoine</title>
+    <title>Découvrir la Corse - Mariage Lisa & Antoine</title>
+    <meta property="og:title" content="Mariage Lisa & Antoine – Découvrir la Corse">
+    <meta property="og:description" content="On se marie le 4 juillet 2026 à Sisco, en Corse ! Toutes les infos pratiques sont ici.">
+    <meta property="og:image" content="https://lisa-antoine.fr/assets/cap.jpg">
+    <meta property="og:url" content="https://lisa-antoine.fr/capcorse">
+    <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,12 +22,17 @@
     </header>
 
     <nav class="wedding-nav">
-        <ul>
-            <li><a href="index.html">Le Programme</a></li>
-            <li><a href="hebergement.html">Hébergement</a></li>
-            <li><a href="liste.html">Liste de Mariage</a></li>
-            <li><a href="capcorse.html" class="active">Découvrir la Corse</a></li>
-        </ul>
+        <div class="nav-inner">
+            <button class="hamburger" aria-label="Menu" onclick="this.classList.toggle('open'); document.getElementById('nav-menu').classList.toggle('open');">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="nav-menu">
+                <li><a href="index.html">Le Programme</a></li>
+                <li><a href="hebergement.html">Hébergement</a></li>
+                <li><a href="liste.html">Liste de Mariage</a></li>
+                <li><a href="capcorse.html" class="active">Découvrir la Corse</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main class="container">
@@ -33,28 +43,38 @@
             <div class="content-box todo-section">
                 <p>Si vous avez la possibilité de prolonger un peu votre séjour, on vous propose quelques idées en fonction du temps dont vous disposez.</p>
 
-                <h3>🥾 Randonnées & Balades</h3>
+                <div class="toc">
+                    <p>Sur cette page :</p>
+                    <ul>
+                        <li><a href="#randonnees">🥾 Randonnées & Balades</a></li>
+                        <li><a href="#plages">🏖️ Les Plages</a></li>
+                        <li><a href="#bastia">🏛️ Bastia</a></li>
+                        <li><a href="#itineraires">🚗 Nos idées d'itinéraires</a></li>
+                    </ul>
+                </div>
+
+                <h3 id="randonnees">🥾 Randonnées & Balades</h3>
 
                 <h4>À Sisco</h4>
                 <p>Depuis tous les hameaux de la commune, vous pouvez rejoindre la rivière — les meilleurs spots sont en haut, vers Teghje. Il y a quelques trous d'eau pour se baigner et des chemins balisés pour se promener.</p>
                 <p>Un chemin de randonnée balisé monte depuis la Marine jusqu'au <strong>Col Saint-Jean</strong> (1000 m de dénivelé, compter 4h pour l'ascension) en passant par tous les hameaux. Vous pouvez aussi partir depuis Barrigione (accessible en voiture) pour raccourcir, comptez alors 2h.</p>
                 <p>Il est aussi possible de poursuivre vers le <strong>Monte Stello</strong>, point culminant du Cap Corse à 1306 mètres, via le Col Saint-Jean — ça vaut vraiment le coup ! Prévoir 1h30 d'ascension supplémentaire.</p>
 
-                <h4>Au Cap Corse</h4>
+                <h4>Dans le Cap</h4>
                 <p>Le <strong>sentier des douaniers</strong> de Macinaggio à Centuri (19 km aller, mais il faut revenir ensuite, donc 38 km au total !).</p>
 
                 <h4>Dans le reste de la Corse</h4>
                 <p>La randonnée vers le <strong>lac de Melo</strong> (avec possibilité de pousser jusqu'au lac de Capitello), au départ de Corte. Et pour les plus ambitieux : le <strong>GR20</strong> ou le <strong>Mare a Mare</strong>.</p>
 
-                <h3>🏖️ Les Plages</h3>
+                <h3 id="plages">🏖️ Les Plages</h3>
                 <p>Impossible de faire l'impasse sur la baignade ! La <strong>plage de Sisco</strong> est une plage de galets, mais l'eau y est très claire et quelques poissons sont à observer.</p>
                 <p>Si vous êtes plutôt "team sable", filez à <strong>Pietracorbara</strong>, la marine juste après Sisco (5 minutes de route) — c'est là qu'on va tout le temps.</p>
                 <p>Il y a des plages tout le long de la route du Cap Corse, donc vous pouvez varier les plaisirs chaque jour. En revanche, aucune n'a de sable fin et blanc (à part Cala Genovese, accessible à pied depuis Macinaggio).</p>
 
-                <h3>🏛️ Bastia</h3>
+                <h3 id="bastia">🏛️ Bastia</h3>
                 <p>Prenez le temps de flâner dans la ville (beaucoup plus jolie qu'Ajaccio !) : de la place Saint-Nicolas jusqu'à la citadelle, en passant par la place du Marché et le vieux port. Le <strong>musée de la Citadelle</strong> est intéressant pour comprendre l'histoire de la Corse.</p>
-                
-                <h3>🚗 Nos idées d'itinéraires</h3>
+
+                <h3 id="itineraires">🚗 Nos idées d'itinéraires</h3>
 
                 <div class="itinerary">
                     <h4>Option 2/3 jours – Le tour du Cap Corse</h4>
@@ -96,7 +116,7 @@
     </main>
 
     <footer class="wedding-footer">
-        <p>Contact: Lisa 07 78 35 05 69 & Antoine 06 67 43 63 37 </p>
+        <p>Contact: Lisa 07 78 35 05 69 & Antoine 06 67 43 63 37</p>
     </footer>
 
 </body>

@@ -56,6 +56,15 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+.nav-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .wedding-nav ul {
     padding: 0;
     margin: 0;
@@ -79,6 +88,42 @@ body {
 .wedding-nav li a.active, .wedding-nav li a:hover {
     color: #FFD700;
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Contenu */
@@ -105,6 +150,86 @@ h2 {
     margin-bottom: 2rem;
 }
 
+/* Titres dans content-box (page programme) */
+.content-box h3 {
+    font-family: 'Dancing Script', cursive;
+    color: #002B5B;
+    font-size: 2rem;
+    margin-top: 0;
+    border-bottom: 1px solid #FFD700;
+    padding-bottom: 8px;
+}
+
+.content-box h4 {
+    color: #002B5B;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+/* Titres dans todo-section (page cap corse) — pas Dancing Script */
+.todo-section h3 {
+    font-family: 'Open Sans', sans-serif;
+    color: #002B5B;
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #FFD700;
+    padding-bottom: 6px;
+}
+
+.todo-section h3:first-of-type {
+    margin-top: 1rem;
+}
+
+.todo-section h4 {
+    color: #002B5B;
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+}
+
+.todo-section ul, .todo-section ol {
+    padding-left: 20px;
+}
+
+.todo-section li {
+    margin-bottom: 0.5rem;
+}
+
+/* Sommaire */
+.toc {
+    background: #f1f5f9;
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #002B5B;
+}
+
+.toc p {
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    color: #002B5B;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+}
+
+.toc ul li a {
+    color: #002B5B;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.toc ul li a:hover {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
 /* Hébergement */
 .hotel-list {
     display: flex;
@@ -120,7 +245,36 @@ h2 {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.hotel-info {
+    flex: 1;
+}
+
+.hotel-info strong {
+    font-size: 1.05rem;
+}
+
+.hotel-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.3rem;
+}
+
+.hotel-status {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.3rem;
+}
+
+.hotel-status.complet {
+    color: #c0392b;
+}
+
+.hotel-status.dispo {
+    color: #27ae60;
 }
 
 .hotel-item a {
@@ -131,6 +285,8 @@ h2 {
     border: 1px solid #002B5B;
     border-radius: 4px;
     transition: all 0.3s;
+    white-space: nowrap;
+    align-self: center;
 }
 
 .hotel-item a:hover {
@@ -172,21 +328,7 @@ h2 {
     transform: translateY(-2px);
 }
 
-/* À faire */
-.todo-section h3 {
-    color: #002B5B;
-    margin-top: 2rem;
-    font-size: 1.5rem;
-}
-
-.todo-section ul, .todo-section ol {
-    padding-left: 20px;
-}
-
-.todo-section li {
-    margin-bottom: 0.5rem;
-}
-
+/* Itinéraires */
 .itinerary {
     background: #f1f5f9;
     padding: 1.5rem;
@@ -211,21 +353,6 @@ h2 {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.content-box h3 {
-    font-family: 'Dancing Script', cursive;
-    color: #002B5B;
-    font-size: 2rem;
-    margin-top: 0;
-    border-bottom: 1px solid #FFD700;
-    padding-bottom: 8px;
-}
-
-.content-box h4 {
-    color: #002B5B;
-    font-size: 1.2rem;
-    margin-top: 1.5rem;
-}
-
 /* Footer */
 .wedding-footer {
     background-color: #001F3F;
@@ -236,7 +363,7 @@ h2 {
     font-size: 0.9rem;
 }
 
-/* --- RÉGLAGES POUR SMARTPHONES --- */
+/* --- SMARTPHONES --- */
 @media (max-width: 768px) {
     .wedding-header {
         height: 250px;
@@ -250,8 +377,40 @@ h2 {
         font-size: 1.1rem;
     }
 
+    /* Hamburger visible */
+    .hamburger {
+        display: block;
+    }
+
+    .wedding-nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #002B5B;
+    }
+
+    .wedding-nav ul.open {
+        display: flex;
+    }
+
     .wedding-nav li a {
-        padding: 0.8rem 0.6rem;
-        font-size: 0.75rem;
+        padding: 0.9rem 1.2rem;
+        font-size: 0.85rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hotel-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hotel-item a {
+        align-self: flex-start;
+        margin-top: 0.5rem;
+    }
+
+    .toc ul {
+        flex-direction: column;
+        gap: 0.3rem;
     }
 }
