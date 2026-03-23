@@ -421,6 +421,13 @@ h2 {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+    }
+
+    .lang-switch {
+        position: static;
+        transform: none;
+        padding: 0.8rem 1rem;
     }
 
     .wedding-nav ul {
